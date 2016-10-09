@@ -1,0 +1,28 @@
+{
+  "name": "react-native-sp",
+  "version": "0.0.3",
+  "description": "Shared preference for react-native.",
+  "main": "index.js",
+  "keywords": [
+    "react-native",
+    "SharedPreference",
+    "Shared",
+    "Preference",
+    "android"
+  ],
+  "author": "ZENOME Inc.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenome/react-native-sp"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "rnpm" : {
+      "android": {
+          "packageInstance": "new RnspReactPackage()"
+      }
+  }
+}
