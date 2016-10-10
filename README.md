@@ -22,7 +22,7 @@ SharedPreference.putString('myEmail', 'myEmailAddress@');
 SharedPreference.getString('myEmail', 'default', result => console.log(result) );
 
 SharedPreference.putInteger('myPin', 123456789);
-SharedPreference.getString('myEmail', -1, result => console.log(result) );
+SharedPreference.getString('myPin', -1, result => console.log(result) );
 
 SharedPreference.putBoolean('Login', true);
 SharedPreference.getBoolean('Login', false, result=>console.log(result));
