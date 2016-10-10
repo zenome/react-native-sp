@@ -55,11 +55,11 @@ public class Settings {
   }
 
   public Settings setInteger(String aKey, Integer aValue) {
-      mSetting.edit().putLong(aKey, aValue.longValue()).commit();
+      mSetting.edit().putInt(aKey, aValue.intValue()).commit();
       return instance;
   }
-  public Long getInteger(String aKey, Integer aDefault) {
-      return mSetting.getLong(aKey, aDefault.longValue());
+  public Integer getInteger(String aKey, Integer aDefault) {
+      return mSetting.getInt(aKey, aDefault.intValue());
   }
 
   public Settings setBoolean(String aKey, Boolean aValue) {
