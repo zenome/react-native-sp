@@ -1,6 +1,6 @@
 {
   "name": "react-native-sp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Shared preference for react-native.",
   "main": "index.js",
   "keywords": [
