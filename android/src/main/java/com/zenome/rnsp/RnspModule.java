@@ -25,10 +25,14 @@
 
 package com.zenome.rnsp;
 
+import android.util.Log;
+
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableMap;
 
 public class RnspModule extends ReactContextBaseJavaModule {
   private final static String TAG = "RnspModule";
@@ -50,8 +54,8 @@ public class RnspModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void getString(String aKey, String aDefault, Callback aCallback) {
-    aCallback.invoke(Settings.Get().getString(aKey, aDefault));
+  public void getString(String aKey, String aDefault, Promise aPromise) {
+    aPromise.resolve(Settings.Get().getString(aKey, aDefault));
   }
 
   @ReactMethod
@@ -60,8 +64,8 @@ public class RnspModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void getInteger(String aKey, Integer aDefault, Callback aCallback) {
-    aCallback.invoke(Settings.Get().getInteger(aKey, aDefault));
+  public void getInteger(String aKey, Integer aDefault, Promise aPromise) {
+    aPromise.resolve(Settings.Get().getInteger(aKey, aDefault));
   }
 
   @ReactMethod
@@ -70,8 +74,8 @@ public class RnspModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void getBoolean(String aKey, Boolean aDefault, Callback aCallback) {
-    aCallback.invoke(Settings.Get().getBoolean(aKey, aDefault));
+  public void getBoolean(String aKey, Boolean aDefault, Promise aPromise) {
+    aPromise.resolve(Settings.Get().getBoolean(aKey, aDefault));
   }
 
   @ReactMethod

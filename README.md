@@ -19,13 +19,16 @@ Example
 import SharedPreference from 'react-native-sp';
 
 SharedPreference.putString('myEmail', 'myEmailAddress@');
-SharedPreference.getString('myEmail', 'default', result => console.log(result) );
+SharedPreference.getString('myEmail', 'default')
+.then(result => console.log(result));
 
 SharedPreference.putInteger('myPin', 123456789);
-SharedPreference.getString('myEmail', -1, result => console.log(result) );
+SharedPreference.getString('myEmail', -1)
+.then(result => console.log(result));
 
 SharedPreference.putBoolean('Login', true);
-SharedPreference.getBoolean('Login', false, result=>console.log(result));
+SharedPreference.getBoolean('Login', false)
+.then(result => console.log(result));
 ````
 
 # License

@@ -63,7 +63,7 @@ public class Settings {
   }
 
   public Settings setBoolean(String aKey, Boolean aValue) {
-      mSetting.edit().putBoolean(aKey, aValue).commit();
+      mSetting.edit().putBoolean(aKey, aValue.booleanValue()).commit();
       return instance;
   }
 
