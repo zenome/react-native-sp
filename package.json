@@ -1,7 +1,9 @@
 {
   "name": "react-native-sp",
-  "version": "0.0.5",
-  "description": "Shared preference for react-native.",
+  "version": "0.0.6",
+  "description": "Android Shared preference for react-native.",
+  "license": "MIT",
+  "author": "ZENOME, Inc.",
   "main": "index.js",
   "keywords": [
     "react-native",
@@ -10,8 +12,6 @@
     "Preference",
     "android"
   ],
-  "author": "ZENOME Inc.",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zenome/react-native-sp"

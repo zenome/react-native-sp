@@ -39,7 +39,6 @@ public class RnspModule extends ReactContextBaseJavaModule {
 
   public RnspModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    Settings.Get().init(reactContext);
   }
 
   @Override
@@ -50,36 +49,43 @@ public class RnspModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void putString(String aKey, String aValue) {
+    Settings.Get().init(getReactApplicationContext());
     Settings.Get().putString(aKey, aValue);
   }
 
   @ReactMethod
   public void getString(String aKey, String aDefault, Promise aPromise) {
+    Settings.Get().init(getReactApplicationContext());
     aPromise.resolve(Settings.Get().getString(aKey, aDefault));
   }
 
   @ReactMethod
   public void putInteger(String aKey, Integer aValue) {
+    Settings.Get().init(getReactApplicationContext());
     Settings.Get().setInteger(aKey, aValue);
   }
 
   @ReactMethod
   public void getInteger(String aKey, Integer aDefault, Promise aPromise) {
+    Settings.Get().init(getReactApplicationContext());
     aPromise.resolve(Settings.Get().getInteger(aKey, aDefault));
   }
 
   @ReactMethod
   public void putBoolean(String aKey, Boolean aValue) {
+    Settings.Get().init(getReactApplicationContext());
     Settings.Get().setBoolean(aKey, aValue);
   }
 
   @ReactMethod
   public void getBoolean(String aKey, Boolean aDefault, Promise aPromise) {
+    Settings.Get().init(getReactApplicationContext());
     aPromise.resolve(Settings.Get().getBoolean(aKey, aDefault));
   }
 
   @ReactMethod
   public void clear(){
+    Settings.Get().init(getReactApplicationContext());
     Settings.Get().clear();
   }
 }
