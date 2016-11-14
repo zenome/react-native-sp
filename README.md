@@ -13,15 +13,8 @@ Run below command on your project root folder.
 ````
 
 # How to use
-
-## Linking this library
-- Run link command on your project root folder.
-````
-> react-native link react-native-sp
-````
-
 ## Mandatory
-You have to set your default value before you use SharedPreferences.
+You have to set your default value before you use SharedPreferences using init() function.
 
 ## Example
 ````javascript
