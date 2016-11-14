@@ -1,18 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View
 } from 'react-native';
 
 import SharedPreferences from 'react-native-sp';
+
+const rnspDefaultValue = {
+  myStrKey : 'default',
+  myIntKey : -1,
+  myBoolKey : false
+};
 
 class example extends Component {
   constructor(props) {
@@ -22,19 +23,31 @@ class example extends Component {
       integer : '-999',
       bool : 'false'
     }
+
+    SharedPreferences.init(rnspDefaultValue);
   }
 
-  componentWillMount() {
-    SharedPreferences.putString('mykey', 'myEmailAddress@');
-    SharedPreferences.getString('mykey', 'default')
+  componentDidMount() {
+    SharedPreferences.getString('mykey')
       .then(result => this.setState({string : result}));
  
-    SharedPreferences.putInteger('myIntKey', 12345678);
-    SharedPreferences.getInteger('myIntKey', -1)
+    SharedPreferences.getInteger('myIntKey')
       .then(result => this.setState({integer : result}));
  
-    SharedPreferences.putBoolean('myBoolKey', true);
-    SharedPreferences.getBoolean('myBoolKey', false)
+    SharedPreferences.getBoolean('myBoolKey')
+      .then(result => this.setState({bool : result}));
+  }
+
+  setValue() {
+    SharedPreferences.putValue('mykey', 'this@that');
+    SharedPreferences.putValue('myIntKey', 1234567890);
+    SharedPreferences.putValue('myBoolKey', true);
+
+    SharedPreferences.getString('mykey')
+      .then(result => this.setState({string : result}));
+    SharedPreferences.getInteger('myIntKey')
+      .then(result => this.setState({integer : result}));
+    SharedPreferences.getBoolean('myBoolKey')
       .then(result => this.setState({bool : result}));
   }
 
@@ -47,6 +60,9 @@ class example extends Component {
         <Text style={styles.instructions}>str - {this.state.string} </Text>
         <Text style={styles.instructions}>Integer - {this.state.integer} </Text>
         <Text style={styles.instructions}>Boolean - {this.state.bool ? 'true' : 'false'} </Text>
+        <TouchableOpacity onPress={this.setValue.bind(this)}>
+          <Text>Set SharedPreferences</Text>
+        </TouchableOpacity>
       </View>
     );
   }

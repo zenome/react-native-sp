@@ -1,6 +1,6 @@
 {
   "name": "react-native-sp",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Android Shared preference for react-native.",
   "license": "MIT",
   "author": "ZENOME, Inc.",
@@ -8,8 +8,9 @@
   "keywords": [
     "react-native",
     "SharedPreference",
-    "Shared",
-    "Preference",
+    "shared preference",
+    "shared",
+    "preference",
     "android"
   ],
   "repository": {
